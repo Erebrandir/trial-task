@@ -19,7 +19,7 @@ func readFilePart(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		return
 	}
-	defer func() { file.Close() }()
+	defer file.Close()
 
 	err = os.Mkdir(DirectorySaved, 0777)
 	if err != nil {
